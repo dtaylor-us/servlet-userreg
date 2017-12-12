@@ -1,0 +1,123 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>userreg</groupId>
+    <artifactId>userreg</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>userreg Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.43</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jasypt</groupId>
+            <artifactId>jasypt</artifactId>
+            <version>1.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.3.9</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.heroku.sdk</groupId>
+                <artifactId>heroku-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <appName>${heroku.appName}</appName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://localhost:8080/manager/text</url>
+                    <username>admin</username>
+                    <password>password</password>
+                    <server>TomcatServer</server>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <scripts>
+                        <!--<script><![CDATA[-->
+                        <!--def env_url = System.getenv("DATABASE_URL")-->
+                        <!--println "ENV_URL: ${env_url}"-->
+
+                        <!--URI dbUri = new URI(env_url);-->
+                        <!--println "DB URI: ${dbUri}"-->
+
+                        <!--def username = dbUri.getUserInfo().split(":")[0];-->
+                        <!--println "ENV_USER: ${username}"-->
+
+                        <!--def password = dbUri.getUserInfo().split(":")[1];-->
+                        <!--println "PASSWORD ${password}"-->
+
+                        <!--def port = dbUri.getPort()-->
+                        <!--port = port < 0 ? "" : ":${port}";-->
+                        <!--println "PORT ${port}"-->
+
+                        <!--def dbUrl = "jdbc:mysql://${dbUri.getHost()}${port}${dbUri.getPath()}";-->
+
+                        <!--println "RESULT_URL: ${dbUrl}"-->
+
+                        <!--project.properties['flyway.url'] = dbUrl-->
+                        <!--project.properties['flyway.user']=username-->
+                        <!--project.properties['flyway.password']=password-->
+                        <!--]]>-->
+                        <!--</script>-->
+                    </scripts>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>4.2.0</version>
+                <configuration>
+                    <!--<url>jdbc:mysql://localhost:2424/catCollab</url>-->
+                    <!--<user>root</user>-->
+                    <!--<password>password</password>-->
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>5.1.43</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+</project>
