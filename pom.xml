@@ -53,6 +53,7 @@
                 <version>2.2</version>
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
+                    <path>/</path>
                     <username>admin</username>
                     <password>password</password>
                     <server>TomcatServer</server>

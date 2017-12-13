@@ -1,0 +1,10 @@
+mysql:
+  restart: always
+  image: mysql:latest
+  environment:
+   - MYSQL_ROOT_PASSWORD=${DOCKER_DATABASE_PASSWORD}
+   - MYSQL_DATABASE=${DOCKER_DATABASE_DB_NAME}
+  expose:
+    - "3306"
+  ports:
+    - "2424:3306"
