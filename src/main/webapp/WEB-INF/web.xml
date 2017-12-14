@@ -12,10 +12,6 @@
   <servlet>
     <servlet-name>Welcome</servlet-name>
     <servlet-class>servlet.Welcome</servlet-class>
-    <init-param>
-      <param-name>email</param-name>
-      <param-value>derek@taylor.com</param-value>
-    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>Validate</servlet-name>
