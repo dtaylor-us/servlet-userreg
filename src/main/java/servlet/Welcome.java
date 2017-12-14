@@ -1,5 +1,6 @@
 package servlet;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +16,8 @@ public class Welcome extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
-            response.sendRedirect("http://google.com");
+            ServletConfig sc=getServletConfig();
+            out.println(sc.getInitParameter("email"));
         } finally {
             out.close();
         }
