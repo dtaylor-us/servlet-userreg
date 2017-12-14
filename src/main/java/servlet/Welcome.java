@@ -15,7 +15,7 @@ public class Welcome extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
-            out.println("<h2>Welcome user</h2>");
+            response.sendRedirect("http://google.com");
         } finally {
             out.close();
         }
