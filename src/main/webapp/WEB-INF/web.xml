@@ -1,27 +1,45 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>User Registration Application</display-name>
+    <display-name>User Registration Application</display-name>
 
-  <servlet>
-    <servlet-name>Validate</servlet-name>
-    <servlet-class>servlet.Validate</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>Welcome</servlet-name>
-    <servlet-class>servlet.Welcome</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Validate</servlet-name>
-    <url-pattern>/Validate</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>Welcome</servlet-name>
-    <url-pattern>/Welcome</url-pattern>
-  </servlet-mapping>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-  </welcome-file-list>
+    <listener>
+        <listener-class>listener.MyListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>Validate</servlet-name>
+        <servlet-class>servlet.Validate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Welcome</servlet-name>
+        <servlet-class>servlet.Welcome</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Counter</servlet-name>
+        <servlet-class>servlet.Counter</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>Validate</servlet-name>
+        <url-pattern>/Validate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Welcome</servlet-name>
+        <url-pattern>/Welcome</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Counter</servlet-name>
+        <url-pattern>/Counter</url-pattern>
+    </servlet-mapping>
+
+
+
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
 </web-app>
