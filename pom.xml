@@ -112,9 +112,9 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>4.2.0</version>
                 <configuration>
-                    <!--<url>jdbc:mysql://localhost:2424/catCollab</url>-->
-                    <!--<user>root</user>-->
-                    <!--<password>password</password>-->
+                    <url>jdbc:mysql://localhost:2424/docker_env</url>
+                    <user>root</user>
+                    <password>password</password>
                 </configuration>
                 <dependencies>
                     <dependency>
