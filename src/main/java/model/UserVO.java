@@ -1,117 +1,117 @@
 package model;
 
 public class UserVO {
-    private int USER_ID;
+    private int userId;
 
-    private String EMAIL;
+    private String email;
 
-    private String FIRST_NAME;
+    private String firstName;
 
-    private String LAST_NAME;
+    private String lastName;
 
-    private String EMAIL_VERIFICATION_HASH;
+    private String emailVerificationHash;
 
-    private int EMAIL_VERIFICATION_ATTEMPTS;
+    private int emailVerificationAttempts;
 
-    private String PASSWORD;
+    private String password;
 
-    private String STATUS;
+    private String status;
 
-    private String CREATED_TIME;
+    private String createdTime;
 
-    public int getUSER_ID ()
+    public int getUserId()
     {
-        return USER_ID;
+        return userId;
     }
 
-    public void setUSER_ID (int USER_ID)
+    public void setUserId(int userId)
     {
-        this.USER_ID = USER_ID;
+        this.userId = userId;
     }
 
-    public String getEMAIL ()
+    public String getEmail()
     {
-        return EMAIL;
+        return email;
     }
 
-    public void setEMAIL (String EMAIL)
+    public void setEmail(String email)
     {
-        this.EMAIL = EMAIL;
+        this.email = email;
     }
 
-    public String getFIRST_NAME ()
+    public String getFirstName()
     {
-        return FIRST_NAME;
+        return firstName;
     }
 
-    public void setFIRST_NAME (String FIRST_NAME)
+    public void setFirstName(String firstName)
     {
-        this.FIRST_NAME = FIRST_NAME;
+        this.firstName = firstName;
     }
 
-    public String getLAST_NAME ()
+    public String getLastName()
     {
-        return LAST_NAME;
+        return lastName;
     }
 
-    public void setLAST_NAME (String LAST_NAME)
+    public void setLastName(String lastName)
     {
-        this.LAST_NAME = LAST_NAME;
+        this.lastName = lastName;
     }
 
-    public String getEMAIL_VERIFICATION_HASH ()
+    public String getEmailVerificationHash()
     {
-        return EMAIL_VERIFICATION_HASH;
+        return emailVerificationHash;
     }
 
-    public void setEMAIL_VERIFICATION_HASH (String EMAIL_VERIFICATION_HASH)
+    public void setEmailVerificationHash(String emailVerificationHash)
     {
-        this.EMAIL_VERIFICATION_HASH = EMAIL_VERIFICATION_HASH;
+        this.emailVerificationHash = emailVerificationHash;
     }
 
-    public int getEMAIL_VERIFICATION_ATTEMPTS ()
+    public int getEmailVerificationAttempts()
     {
-        return EMAIL_VERIFICATION_ATTEMPTS;
+        return emailVerificationAttempts;
     }
 
-    public void setEMAIL_VERIFICATION_ATTEMPTS (int EMAIL_VERIFICATION_ATTEMPTS)
+    public void setEmailVerificationAttempts(int emailVerificationAttempts)
     {
-        this.EMAIL_VERIFICATION_ATTEMPTS = EMAIL_VERIFICATION_ATTEMPTS;
+        this.emailVerificationAttempts = emailVerificationAttempts;
     }
 
-    public String getPASSWORD ()
+    public String getPassword()
     {
-        return PASSWORD;
+        return password;
     }
 
-    public void setPASSWORD (String PASSWORD)
+    public void setPassword(String password)
     {
-        this.PASSWORD = PASSWORD;
+        this.password = password;
     }
 
-    public String getSTATUS ()
+    public String getStatus()
     {
-        return STATUS;
+        return status;
     }
 
-    public void setSTATUS (String STATUS)
+    public void setStatus(String status)
     {
-        this.STATUS = STATUS;
+        this.status = status;
     }
 
-    public String getCREATED_TIME ()
+    public String getCreatedTime()
     {
-        return CREATED_TIME;
+        return createdTime;
     }
 
-    public void setCREATED_TIME (String CREATED_TIME)
+    public void setCreatedTime(String createdTime)
     {
-        this.CREATED_TIME = CREATED_TIME;
+        this.createdTime = createdTime;
     }
 
     @Override
     public String toString()
     {
-        return "ClassPojo [USER_ID = "+USER_ID+", EMAIL = "+EMAIL+", FIRST_NAME = "+FIRST_NAME+", LAST_NAME = "+LAST_NAME+", EMAIL_VERIFICATION_HASH = "+EMAIL_VERIFICATION_HASH+", EMAIL_VERIFICATION_ATTEMPTS = "+EMAIL_VERIFICATION_ATTEMPTS+", PASSWORD = "+PASSWORD+", STATUS = "+STATUS+", CREATED_TIME = "+CREATED_TIME+"]";
+        return "ClassPojo [userId = "+ userId +", email = "+ email +", firstName = "+ firstName +", lastName = "+ lastName +", emailVerificationHash = "+ emailVerificationHash +", emailVerificationAttempts = "+ emailVerificationAttempts +", password = "+ password +", status = "+ status +", createdTime = "+ createdTime +"]";
     }
 }

@@ -7,6 +7,12 @@
     <version>1.0-SNAPSHOT</version>
     <name>userreg Maven Webapp</name>
     <url>http://maven.apache.org</url>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -41,6 +47,26 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>jasper</artifactId>
+            <version>6.0.44</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.3m</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -59,9 +85,10 @@
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
                     <path>/</path>
-                    <username>admin</username>
-                    <password>password</password>
-                    <server>TomcatServer</server>
+                    <!--<username>admin</username>-->
+                    <!--<password>password</password>-->
+                    <!--<server>TomcatServer</server>-->
+                    <contextReloadable>true</contextReloadable>
                 </configuration>
             </plugin>
             <plugin>
@@ -89,7 +116,7 @@
                         <!--println "ENV_USER: ${username}"-->
 
                         <!--def password = dbUri.getUserInfo().split(":")[1];-->
-                        <!--println "PASSWORD ${password}"-->
+                        <!--printpasswordWORD ${password}"-->
 
                         <!--def port = dbUri.getPort()-->
                         <!--port = port < 0 ? "" : ":${port}";-->

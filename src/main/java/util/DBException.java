@@ -1,4 +1,4 @@
-package config.exception;
+package util;
 
 public class DBException extends Exception {
 

@@ -1,4 +1,4 @@
-package config;
+package constants;
 
 public class ConfigurationConstants {
     public static final String DB_URL = "jdbc:mysql://localhost:2424/docker_env";
