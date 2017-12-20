@@ -31,7 +31,7 @@ public class UserDAOImpl extends MySQL implements UserDAO {
         } catch (SQLException e) {
             close(conn, ps, res);
             LOGGER.debug(e.getMessage());
-            throw new DBException("Excepion while accessing database");
+            throw new DBException("Exception while accessing database");
         }
         return vo;
     }
@@ -73,7 +73,7 @@ public class UserDAOImpl extends MySQL implements UserDAO {
         } catch (SQLException e) {
             close(conn, ps, res);
             LOGGER.debug(e.getMessage());
-            throw new DBException("Excepion while accessing database");
+            throw new DBException("Exception while accessing database");
         }
         return verified;
     }
@@ -97,7 +97,7 @@ public class UserDAOImpl extends MySQL implements UserDAO {
         } catch (SQLException e) {
             LOGGER.debug(e.getMessage());
             close(conn, ps, res);
-            throw new DBException("Excepion while accessing database");
+            throw new DBException("Exception while accessing database");
         }
         return verified;
     }
@@ -133,7 +133,7 @@ public class UserDAOImpl extends MySQL implements UserDAO {
         } catch (SQLException e) {
             LOGGER.debug(e.getMessage());
             close(conn, ps1, ps2, res);
-            throw new DBException("Excepion while accessing database");
+            throw new DBException("Exception while accessing database");
         }
         return id;
     }
@@ -168,7 +168,7 @@ public class UserDAOImpl extends MySQL implements UserDAO {
         } catch (SQLException e) {
             LOGGER.debug(e.getMessage());
             close(conn, ps);
-            throw new DBException("Excepion while accessing database");
+            throw new DBException("Exception while accessing database");
         }
     }
 
@@ -186,7 +186,7 @@ public class UserDAOImpl extends MySQL implements UserDAO {
         } catch (SQLException e) {
             LOGGER.debug(e.getMessage());
             close(conn, ps);
-            throw new DBException("Excepion while accessing database");
+            throw new DBException("Exception while accessing database");
         }
     }
 
@@ -214,7 +214,7 @@ public class UserDAOImpl extends MySQL implements UserDAO {
         } catch (SQLException e) {
             LOGGER.debug(e.getMessage());
             close(conn, ps, ps2, res);
-            throw new DBException("Excepion while accessing database");
+            throw new DBException("Exception while accessing database");
         }
         return attempts;
     }
@@ -245,7 +245,7 @@ public class UserDAOImpl extends MySQL implements UserDAO {
         } catch (SQLException e) {
             LOGGER.debug(e.getMessage());
             close(conn, ps, res);
-            throw new DBException("Excepion while accessing database");
+            throw new DBException("Exception while accessing database");
         }
         return vo;
     }
@@ -270,7 +270,7 @@ public class UserDAOImpl extends MySQL implements UserDAO {
         } catch (SQLException e) {
             LOGGER.debug(e.getMessage());
             close(conn, ps, res);
-            throw new DBException("Excepion while accessing database");
+            throw new DBException("Exception while accessing database");
         }
         return verified;
     }
@@ -288,7 +288,7 @@ public class UserDAOImpl extends MySQL implements UserDAO {
         } catch (SQLException e) {
             LOGGER.debug(e.getMessage());
             close(conn, ps);
-            throw new DBException("Excepion while accessing database");
+            throw new DBException("Exception while accessing database");
         }
     }
 
@@ -307,7 +307,7 @@ public class UserDAOImpl extends MySQL implements UserDAO {
         } catch (SQLException e) {
             LOGGER.debug(e.getMessage());
             close(conn, ps);
-            throw new DBException("Excepion while accessing database");
+            throw new DBException("Exception while accessing database");
         }
     }
 
@@ -326,7 +326,7 @@ public class UserDAOImpl extends MySQL implements UserDAO {
         } catch (SQLException e) {
             LOGGER.debug(e.getMessage());
             close(conn, ps, res);
-            throw new DBException("Excepion while accessing database");
+            throw new DBException("Exception while accessing database");
         }
         return vo;
     }

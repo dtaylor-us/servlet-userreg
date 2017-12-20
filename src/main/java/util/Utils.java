@@ -27,6 +27,6 @@ public class Utils {
     }
 
     public static void main(String args[]) throws MessagingException {
-        MailUtil.sendEmailRegistrationLink("1", "derektaylor.us@gmail.com", "hash");
+        MailUtil.sendEmailRegistrationLink("2", "leslie.ashbach@lifeprepschool.org", "merry-christmas");
     }
 }

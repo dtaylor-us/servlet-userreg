@@ -6,10 +6,12 @@
 
     <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" media="screen"/>
     <link rel="stylesheet" href="../../resources/css/bootstrap-theme.min.css" media="screen"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
     <script src="../../resources/js/jquery-1.11.3.min.js"></script>
     <script src="../../resources/js/bootstrap.min.js"></script>
     <script src="../../resources/js/validator.min.js"></script>
+    <script src="../../resources/js/my-block-ui.js"></script>
 
     <style>
         .form-horizontal .control-label {

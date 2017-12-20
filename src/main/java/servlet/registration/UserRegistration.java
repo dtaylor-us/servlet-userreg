@@ -11,8 +11,10 @@ import model.StatusVO;
 import model.UserVO;
 import org.apache.log4j.Logger;
 import org.mindrot.jbcrypt.BCrypt;
+import util.MailUtil;
 import util.Utils;
 
+import javax.mail.MessagingException;
 import javax.servlet.ServletException;
 
 import javax.servlet.annotation.WebServlet;
@@ -62,26 +64,35 @@ public class UserRegistration extends HttpServlet {
             userVO.setPassword(BCrypt.hashpw(password, BCrypt.gensalt()));
 
             // generate hash code for email verification
-            String hash = Utils.prepareRandomString(30);
+            String hash = Utils.prepareRandomString(15);
 
             // generate hash for password
-            userVO.setPassword(BCrypt.hashpw(hash, BCrypt.gensalt()));
+            String emailVerifHash = BCrypt.hashpw(hash, BCrypt.gensalt());
+            userVO.setEmailVerificationHash(emailVerifHash);
 
             try {
 
                 //check if email exists or not
                 if (!userDAO.doesEmailExist(email)) {
                     // create account if email not exists
-                    userDAO.insertRow(userVO);
-                    // todo send verification email
+                    String id = userDAO.insertRow(userVO);
+                    MailUtil.sendEmailRegistrationLink(id, email, hash);
+                    statusVO.setCode(0);
+                    statusVO.setMessage("Registation Link Was Sent To Your Mail Successfully. Please Verify Your Email");
+                    output = gson.toJson(statusVO);
+
                 } else {
                     // tell user that the email already in use
                     statusVO.setCode(-1);
                     statusVO.setMessage("This email was already registered.");
+                    logger.info(statusVO.getCode());
+                    logger.info(statusVO.getMessage());
                     output = gson.toJson(statusVO);
                 }
 
-            } catch (DBException e) {
+            } catch (DBException | MessagingException e) {
+                logger.info(hash);
+                logger.info(emailVerifHash);
                 logger.debug(e.getMessage());
                 statusVO.setCode(-1);
                 statusVO.setMessage(e.getMessage());

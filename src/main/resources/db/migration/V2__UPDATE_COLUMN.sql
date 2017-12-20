@@ -1,0 +1,1 @@
+ALTER TABLE user MODIFY email_verification_hash VARCHAR(60);
