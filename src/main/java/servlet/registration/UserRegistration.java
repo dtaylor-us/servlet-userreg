@@ -1,7 +1,6 @@
 package servlet.registration;
 
 import com.google.gson.Gson;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import constants.ErrorMessageConstants;
 import constants.FieldConstants;
 import constants.ViewConstants;

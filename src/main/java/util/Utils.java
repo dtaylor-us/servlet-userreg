@@ -2,6 +2,7 @@ package util;
 
 import org.mindrot.jbcrypt.BCrypt;
 
+import javax.mail.MessagingException;
 import java.util.Random;
 
 public class Utils {
@@ -25,7 +26,7 @@ public class Utils {
         return new String(buf);
     }
 
-    public static void main(String args[]) {
-        System.out.println(BCrypt.gensalt());
+    public static void main(String args[]) throws MessagingException {
+        MailUtil.sendEmailRegistrationLink("1", "derektaylor.us@gmail.com", "hash");
     }
 }
