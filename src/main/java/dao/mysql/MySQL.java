@@ -1,14 +1,11 @@
 package dao.mysql;
 
+import constants.ConfigurationConstants;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
 
 public abstract class MySQL {
-    protected static String dbUser = System.getenv("DOCKER_DATABASE_USERNAME");
-    protected static String dbPass = System.getenv("DOCKER_DATABASE_PASSWORD");
-    protected static String url = System.getenv("DOCKER_DATABASE_URL");
-
     protected static Connection connection = null;
 
     final static Logger logger = Logger.getLogger(MySQL.class);
@@ -25,7 +22,7 @@ public abstract class MySQL {
 
 
         try {
-            connection = DriverManager.getConnection(url, dbUser, dbPass);
+            connection = DriverManager.getConnection(ConfigurationConstants.DB_URL, ConfigurationConstants.DB_USERNAME, ConfigurationConstants.DB_PASSWORD);
         } catch (SQLException ex) {
             logger.error("Connection failed!" + ex);
         }

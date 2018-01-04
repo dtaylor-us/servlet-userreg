@@ -71,7 +71,6 @@ public class UserRegistration extends HttpServlet {
             userVO.setEmailVerificationHash(emailVerifHash);
 
             try {
-
                 //check if email exists or not
                 if (!userDAO.doesEmailExist(email)) {
                     // create account if email not exists

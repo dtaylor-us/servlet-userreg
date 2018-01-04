@@ -40,9 +40,15 @@ migrate_schema() {
 
 start_server() {
     echo "********************************************************"
-    echo "      Starting Tomcat Server..."
+    echo "      Starting Web Server..."
     echo "********************************************************"
     mvn jetty:run
+}
+stop_server() {
+    echo "********************************************************"
+    echo "      Stopping Web Server..."
+    echo "********************************************************"
+    mvn jetty:stop
 }
 
 case $1 in
@@ -66,6 +72,9 @@ case $1 in
         compile
         install
         start_server
+        ;;
+    stop)
+        stop_server
         ;;
 
     esac
