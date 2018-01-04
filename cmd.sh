@@ -42,7 +42,7 @@ start_server() {
     echo "********************************************************"
     echo "      Starting Tomcat Server..."
     echo "********************************************************"
-    mvn tomcat7:run-war
+    mvn jetty:run
 }
 
 case $1 in
